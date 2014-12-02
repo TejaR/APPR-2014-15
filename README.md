@@ -1,13 +1,19 @@
 # Analiza podatkov s programom R, 2014/15
 
+## Gradnja stanovanj v Sloveniji
+
 Avtor: Teja Rupnik
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2014/15.
 
 ## Tematika
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal. Tukaj boste
-napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+V projektu, bom analizirala podatke o dokončanih stanovanjih. Primerjala bom dokončana stanovanja glede na nastanek, torej stanovanja pridobljena z novogradnjo, povečavo in spremembo namembnosti. Nato bom primerjala stanovanja po investitorjih, ki so investirali v gradnjo. Radelila jih bom na pravne in fizične osebe. Vse te podatke pa bom primerjala po regijah v Sloveniji.
+
+Podatke za moj projekt sam dobila na spletni strani Statističnega urada Republike Slovenije.
+(http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=1906902S&ti=&path=../Database/Ekonomsko/19_gradbenistvo/05_19069_graditev_stan/&lang=2)
+
+Moj cilj projekta je, da analiziram katere regije imajo največ dokončanih stanovanj, kateri investitorji so največ investirali v izgradnjo stanovanje in primerjati kako so stanovanja nastala.
 
 ## Program
 
