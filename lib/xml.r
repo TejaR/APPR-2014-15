@@ -55,7 +55,7 @@ uvozi.nacin <- function() {
   
   # Iz druge tabele dobimo seznam vrstic (<tr>) neposredno pod
   # trenutnim vozliščem
-  vrstice <- getNodeSet(tabele[[2]], "./tr")
+  vrstice <- getNodeSet(tabele[[1]], "./tr")
   
   # Seznam vrstic pretvorimo v seznam (znakovnih) vektorjev
   # s porezanimi vsebinami celic (<td>) neposredno pod trenutnim vozliščem
@@ -73,3 +73,6 @@ uvozi.nacin <- function() {
                                     gsub("\\.", "", matrika[,2:5]))),
                           2, as.numeric), row.names=matrika[,1]))
 }
+
+r <- data.frame(apply(gsub(",", "", matrika[,2:5]),2, as.numeric), row.names=matrika[,1])
+names(r) <- c("Low Estimate of Number of Water Systems Affected","Low Estimate of Total Population Served","Best Estimate of Number of Water Systems Affected","Best Estimate of Total Population Served")

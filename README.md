@@ -13,6 +13,17 @@ V projektu, bom analizirala podatke o dokončanih stanovanjih. Primerjala bom do
 Podatke za moj projekt sam dobila na spletni strani Statističnega urada Republike Slovenije.
 (http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=1906902S&ti=&path=../Database/Ekonomsko/19_gradbenistvo/05_19069_graditev_stan/&lang=2)
 
+Uvozila sem 3 tabele:
+
+1. http://pxweb.stat.si/pxweb/Dialog/SaveShow.asp
+2. 
+
+Prvo in druga tabelo sem uvozila iz spletne strani SURS v obliki scv.
+
+3.
+
+Tretjo pa bom uvozila kot html.
+
 Moj cilj projekta je, da analiziram katere regije imajo največ dokončanih stanovanj, kateri investitorji so največ investirali v izgradnjo stanovanje in primerjati kako so stanovanja nastala.
 
 ## Program
