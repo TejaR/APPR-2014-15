@@ -18,7 +18,7 @@ uvoziPoLetih <- function(){
                     row.names = 3,
                     col.names = c(rep("", 3), 2008:2013),
                     skip = 4, header = FALSE,
-                    fileEncoding = "Windows-1250")[c(-1, -2)])
+                    fileEncoding = "UTF-8")[c(-1, -2)])
 }
 
 cat("Uvažam letne podatke o stanovanjah (tabela 1)\n")
@@ -30,7 +30,7 @@ uvoziPoInvestitorjih <- function(){
                     row.names = 2,
                     col.names = c(rep("", 2), "Pravna oseba", "Fizična oseba"),
                     skip = 4, header = FALSE,
-                    fileEncoding = "Windows-1250")[c(-1)])
+                    fileEncoding = "UTF-8")[c(-1)])
 }
 
 cat("Uvažam podatke o stanovanjih po investitorjih (tabela 2)\n")
