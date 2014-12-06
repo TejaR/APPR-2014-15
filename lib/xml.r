@@ -47,8 +47,8 @@ stripByPath <- function(x, path) {
 }
 
 uvozi.nacin <- function() {
-  url.nacin <- "http://pxweb.stat.si/pxweb/Dialog/SaveShow.asp"
-  doc.nacin <- htmlTreeParse(url.nacin, useInternalNodes=TRUE)
+  url.nacin <- "podatki/PoNacinu.htm"
+  doc.nacin <- htmlTreeParse(url.nacin, useInternalNodes=TRUE, encoding = "Windows-1250")
   
   # Poiščemo vse tabele v dokumentu
   tabele <- getNodeSet(doc.nacin, "//table")
@@ -59,20 +59,15 @@ uvozi.nacin <- function() {
   
   # Seznam vrstic pretvorimo v seznam (znakovnih) vektorjev
   # s porezanimi vsebinami celic (<td>) neposredno pod trenutnim vozliščem
-  seznam <- lapply(vrstice[2:length(vrstice)], stripByPath, "./td")
+  seznam <- lapply(vrstice[4:length(vrstice)-1], stripByPath, "./td")
   
   # Iz seznama vrstic naredimo matriko
   matrika <- matrix(unlist(seznam), nrow=length(seznam), byrow=TRUE)
   
   # Imena stolpcev matrike dobimo iz celic (<th>) glave (prve vrstice) prve tabele
-  colnames(matrika) <- gsub("\n", " ", stripByPath(tabele[[2]][[1]], ".//th"))
+  colnames(matrika) <- gsub("\n", " ", stripByPath(vrstice[[3]], ".//th"))
   
   # Podatke iz matrike spravimo v razpredelnico
-  return(data.frame(apply(gsub("\\*", "",
-                               gsub(",", ".",
-                                    gsub("\\.", "", matrika[,2:5]))),
-                          2, as.numeric), row.names=matrika[,1]))
+  return(data.frame(apply(gsub("\\(.*$", "",matrikam[,2:7]),
+                          2, as.numeric), row.names=matrikam[,1]))
 }
-
-r <- data.frame(apply(gsub(",", "", matrika[,2:5]),2, as.numeric), row.names=matrika[,1])
-names(r) <- c()
