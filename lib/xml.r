@@ -46,6 +46,7 @@ stripByPath <- function(x, path) {
                     function(y) gsub("^\\s*(.*?)\\s*$", "\\1", xmlValue(y))))
 }
 
+#Tabela 3
 uvozi.nacin <- function() {
   url.nacin <- "podatki/PoNacinu.htm"
   doc.nacin <- htmlTreeParse(url.nacin, useInternalNodes=TRUE, encoding = "Windows-1250")

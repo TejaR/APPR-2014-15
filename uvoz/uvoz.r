@@ -36,8 +36,6 @@ uvoziPoInvestitorjih <- function(){
 cat("Uvažam podatke o stanovanjih po investitorjih (tabela 2)\n")
 invest <- uvoziPoInvestitorjih()
 
-#Tabela 3:
-
 
 
 # Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi
