@@ -10,3 +10,5 @@ oznake <- rownames(invest)
 oznake[8] <- "Jugovzhodna\nSlovenija"
 barplot(apply(invest[-1,], 1, c), beside = TRUE, names.arg = oznake[-1], las = 2,
         legend = c("Pravne osebe", "Fizične osebe"), cex.names = 0.6)
+
+dev.off()
