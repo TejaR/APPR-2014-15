@@ -60,15 +60,15 @@ uvozi.nacin <- function() {
   
   # Seznam vrstic pretvorimo v seznam (znakovnih) vektorjev
   # s porezanimi vsebinami celic (<td>) neposredno pod trenutnim vozliščem
-  seznam <- lapply(vrstice[4:length(vrstice)-1], stripByPath, "./td")
+  seznam <- lapply(vrstice[7:length(vrstice)-1], stripByPath, "./td")
   
   # Iz seznama vrstic naredimo matriko
   matrika <- matrix(unlist(seznam), nrow=length(seznam), byrow=TRUE)
   
   # Imena stolpcev matrike dobimo iz celic (<th>) glave (prve vrstice) prve tabele
-  colnames(matrika) <- gsub("\n", " ", stripByPath(vrstice[[3]], ".//th"))
+  colnames(matrika) <- gsub("\n", " ", stripByPath(vrstice[[3]], ".//th")[-1])
   
   # Podatke iz matrike spravimo v razpredelnico
-  return(data.frame(apply(gsub("\\(.*$", "",matrikam[,2:7]),
-                          2, as.numeric), row.names=matrikam[,1]))
+  return(data.frame(apply(matrika, 2, as.numeric),
+                    row.names = lapply(vrstice[7:length(vrstice)-1], stripByPath, "./th")))
 }

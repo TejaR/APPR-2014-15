@@ -1,7 +1,12 @@
 pdf("slike/grafi.pdf",paper="a4")
 
 #leta
-barplot(as.matrix(leta), beside = TRUE, las = 2, legend = c("SLOVENIJA", "Pomurska", "Podravska", "Koroška", "Savinjska", "Zasavska", "Spodnjeposavska", "Jugovzhodna Slovenija", "Osrednjeslovenska", "Gorenjska", "Notranjsko-kraška", "Goriška", "Obalno-kraška"))
+barplot(as.matrix(leta), names.arg = 2008:2013,
+        beside = TRUE, legend = rownames(leta),
+        args.legend = c(cex = 0.7), col = rainbow)
 
 #investitorji
-barplot(apply(invest[-1,], 1, c), beside = TRUE, las = 2, legend = c("Pravne osebe", "Fizične osebe"))
+oznake <- rownames(invest)
+oznake[8] <- "Jugovzhodna\nSlovenija"
+barplot(apply(invest[-1,], 1, c), beside = TRUE, names.arg = oznake[-1], las = 2,
+        legend = c("Pravne osebe", "Fizične osebe"), cex.names = 0.6)
