@@ -51,30 +51,15 @@ source("lib/uvozi.zemljevid.r")
 
 # Uvozimo zemljevid.
 cat("Uvažam zemljevid...\n")
-slo <- uvozi.zemljevid("http://e-prostor.gov.si/fileadmin/BREZPLACNI_POD/RPE/OB.zip",
-                          "Slovenija", "OB/OB.shp", mapa = "zemljevid",
+regije <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2/shp/SVN_adm.zip",
+                          "regije", "SVN_adm1.shp", mapa = "zemljevid",
                           encoding = "Windows-1250")
 
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
-preuredi <- function(podatki, zemljevid) {
-  nove.slo <- c()
-  manjkajo <- ! nove.slo %in% rownames(podatki)
-  M <- as.data.frame(matrix(nrow=sum(manjkajo), ncol=length(podatki)))
-  names(M) <- names(podatki)
-  row.names(M) <- nove.slo[manjkajo]
-  podatki <- rbind(podatki, M)
-  
-  out <- data.frame(podatki[order(rownames(podatki)), ])[rank(levels(zemljevid$OB_UIME)[rank(zemljevid$OB_UIME)]), ]
-  if (ncol(podatki) == 1) {
-    out <- data.frame(out)
-    names(out) <- names(podatki)
-    rownames(out) <- rownames(podatki)
-  }
-  return(out)
-}
+zemljevid.leta <- leta[as.character(regije$NAME_1), ]
 
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
-invest <- preuredi(invest, slo)
+invest <- preuredi(invest, regije)
 
 # Izračunamo povprečno velikost družine.
 invest$povprecje <- apply(invest, 1, function(x) mean(x))
@@ -83,10 +68,8 @@ max.povprecje <- max(invest$povprecje, na.rm=TRUE)
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid slovenije...\n")
-pdf("slike/Slovenija.pdf")
+pdf("slike/regije.pdf")
 
-n = 100
-barve = topo.colors(n)[1+(n-1)*(invest$povprecje-min.povprecje)/(max.povprecje-min.povprecje)]
-plot(slo, col = barve)
+
 
 dev.off()
