@@ -36,8 +36,24 @@ uvoziPoInvestitorjih <- function(){
 cat("Uvažam podatke o stanovanjih po investitorjih (tabela 2)\n")
 invest <- uvoziPoInvestitorjih()
 
+#Tabela 3
 cat("Uvažam podatke o stanovanjih po načinu izgradnje (tabela 3)\n")
 nacin <- uvozi.nacin()
+
+#Tabela 4
+uvoziPrebivalstvo <- function(){
+  return(read.table("podatki/prebivalstvo_po_regijah.csv", sep = ";", as.is = TRUE,
+                    row.names = 1,
+                    col.names = c(rep("", 1), "2008H1", "2008H2", "2009H1", "2009H2", "2010H1", "2010H2", "2011H1", "2011H2", "2012H1", "2012H2", "2013H1", "2013H2", "2014H1", "2014H2"),
+                    skip = 3, header = FALSE,
+                    fileEncoding = "UTF-8"))
+}
+
+cat("Uvažam letne podatke o prebivalstvu po regijah (tabela 4)\n")
+prebivalstvo <- uvoziPrebivalstvo()
+
+
+
 
 
 
