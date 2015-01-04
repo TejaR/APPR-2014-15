@@ -1,45 +1,16 @@
-"Prebivalstvo po: STATISTIÈNA REGIJA , POLLETJE"
+"Prebivalstvo po: STATISTIÄŒNA REGIJA , POLLETJE"
 
 " ";"2008H1";"2008H2";"2009H1";"2009H2";"2010H1";"2010H2";"2011H1";"2011H2";"2012H1";"2012H2";"2013H1";"2013H2";"2014H1";"2014H2"
 "SLOVENIJA";2025866;2022629;2032362;2042335;2046976;2049261;2050189;2052496;2055496;2056262;2058821;2059114;2061085;2061623
 "Pomurska";121824;120357;119537;119691;119548;119349;119145;119146;118988;118573;118022;117675;117133;117005
 "Podravska";321781;320873;322900;323110;323343;322949;323119;322843;323534;323026;323238;322748;323328;323034
-"Koroška";73714;72837;72481;72839;72812;72713;72494;72521;72364;72267;72100;71945;71546;71390
+"KoroÅ¡ka";73714;72837;72481;72839;72812;72713;72494;72521;72364;72267;72100;71945;71546;71390
 "Savinjska";261243;258201;258845;259741;260025;260039;259726;260093;260253;260545;260217;260479;259853;259935
 "Zasavska";45226;44862;44750;44740;44706;44483;44222;44106;43926;43775;43502;43341;42983;42824
 "Spodnjeposavska";70353;69872;69900;70091;70192;70192;70167;70086;70164;70215;70211;70244;69958;69994
 "Jugovzhodna Slovenija";141547;140376;141166;141935;142092;142408;142483;142554;142680;142749;142509;142605;142405;142237
 "Osrednjeslovenska";508607;516249;521965;526636;529646;531811;533213;534807;536484;537712;541718;542447;546314;547730
 "Gorenjska";201254;200952;201779;202470;202903;203192;203427;203703;204057;204170;203984;203926;203894;203894
-"Notranjsko-kraška";52083;51793;51728;52163;52217;52256;52287;52419;52387;52423;52382;52531;52449;52517
-"Goriška";120329;118597;118533;119055;119080;119126;119146;119163;119236;119230;119002;119019;118374;118335
-"Obalno-kraška";107905;107660;108778;109864;110412;110743;110760;111055;111423;111577;111936;112154;112848;112728
-
-"Od objave podatkov o prebivalstvu Slovenije po 1.1. 2008 uporabljamo "
-"na Statistiènem uradu Republike Slovenije (seznam "
-"HREF=http://www.stat.si/novica_prikazi.aspx?id=2915 TARGET=_blank) "
-"spremenjeno statistièno definicijo prebivalstva. To pomeni prelom v "
-"èasovni vrsti podatkov, zato podatki po tej definiciji, torej podatki "
-"od sredine leta 2008 dalje, niso neposredno primerljivi s podatki za "
-"predhodna stanja. "
-" "
-"Vir: Statistièni urad Republike Slovenije."
-
-"Podatki so teritorialno razvršèeni po Klasifikaciji statistiènih "
-"teritorialnih enot v Evropski uniji (The Classification  of "
-"Territorial Units for Statistics) – NUTS ((seznam "
-"HREF=../database/Meta/Klas/NUTS.htm TARGET=_blank) opis in "
-"pojasnila), raven NUTS 3.Opombe o spremembah posameznih regij so "
-"zapisane k vsaki spremenjeni regiji in so ob izpisu tabele na zaslon "
-"dostopne s klikom na ikono za opombe (zvezdica). V opombah je na "
-"zaèetku naveden datum, s katerim je opisana teritorialna sprememba "
-"upoštevana pri teritorialnem razvršèanju enot za statistiène namene."
-
-"H1 je po stanju 1. 1. "
-"H2 je po stanju 1. 7."
-
-"Podatke o prebivalstvu za stanje 1. 1. 2011 smo v Sloveniji "
-"pripravili tudi v skladu z Uredbo (ES) št. 763/2008 Evropskega "
-"parlamenta in Sveta z dne 9. julija 2008 o popisih prebivalstva in "
-"stanovanj (Uradni list Evropske unije L 218/14, 13. avgust 2008)."
-
+"Notranjsko-kraÅ¡ka";52083;51793;51728;52163;52217;52256;52287;52419;52387;52423;52382;52531;52449;52517
+"GoriÅ¡ka";120329;118597;118533;119055;119080;119126;119146;119163;119236;119230;119002;119019;118374;118335
+"Obalno-kraÅ¡ka";107905;107660;108778;109864;110412;110743;110760;111055;111423;111577;111936;112154;112848;112728
