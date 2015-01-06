@@ -37,6 +37,7 @@ cat("Uvažam podatke o stanovanjih po investitorjih (tabela 2)\n")
 invest <- uvoziPoInvestitorjih()
 
 #Tabela 3
+source("lib/xml.r", encoding="UTF-8")
 cat("Uvažam podatke o stanovanjih po načinu izgradnje (tabela 3)\n")
 nacin <- uvozi.nacin()
 
