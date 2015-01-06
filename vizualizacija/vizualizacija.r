@@ -59,7 +59,7 @@ regije <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2/shp/SVN_adm.zip"
 zemljevid.leta <- leta[as.character(regije$NAME_1), ]
 
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
-invest <- zemljevid.leta(invest[-1], regije)
+invest <- invest[as.character(regije$NAME_1), ]
 
 # Izračunamo povprečno velikost družine.
 invest$povprecje <- apply(invest, 1, function(x) mean(x))

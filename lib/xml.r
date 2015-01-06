@@ -49,7 +49,7 @@ stripByPath <- function(x, path) {
 #Tabela 3
 uvozi.nacin <- function() {
   url.nacin <- "podatki/PoNacinu.htm"
-  doc.nacin <- htmlTreeParse(url.nacin, useInternalNodes=TRUE, encoding = "Windows-1250")
+  doc.nacin <- htmlTreeParse(url.nacin, useInternalNodes=TRUE, encoding = "UTF-8")
   
   # Poiščemo vse tabele v dokumentu
   tabele <- getNodeSet(doc.nacin, "//table")
