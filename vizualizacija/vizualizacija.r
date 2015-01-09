@@ -61,7 +61,12 @@ zemljevid.leta <- leta[as.character(regije$NAME_1), ]
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
 invest <- invest[as.character(regije$NAME_1), ]
 
-
+koordinate <- coordinates(regije)
+rownames(koordinate) <- as.character(regije$NAME_1) # za lažje indeksiranje
+# premaknemo po osi x
+koordinate["Jugovzhodna Slovenija", 1] <- koordinate["Jugovzhodna Slovenija", 1] - 0.05
+# premaknemo po osi y
+koordinate["Obalno-kraška", 2] <- koordinate["Obalno-kraška", 2] - 0.1
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid slovenije...\n")
@@ -78,6 +83,9 @@ barve =rgb(1, 1, (n:1)/n)[unlist(1+(n-1)*norm.povprecje)]
 plot(regije, col = barve,bg="lightblue")
 text(coordinates(regije),labels=as.character(regije$NAME_1),cex=0.5)
 title("Povprečno število stanovanj po regijah")
+LJUBLJANA <- regije$VARNAME_1 == "Ljubljana"
+points(coordinates(regije), pch = ifelse(LJUBLJANA, 18, 0), cex = ifelse(LJUBLJANA, 0.5 ,0), col = ifelse(LJUBLJANA, "red", "white"))
+
 
 dev.off()
 
@@ -96,7 +104,7 @@ print(spplot(regije, "stanovanja2011", col.regions  = topo.colors(50),
 dev.off()
 
 pdf("slike/regije4.pdf")
-regije$stanovanja2013 <- zemljevid.leta[,8]
+regije$stanovanja2013 <- zemljevid.leta[,"X2013"]
 print(spplot(regije, "stanovanja2013", col.regions  = topo.colors(50),
              main = "Število stanovanj po regijah (leto 2013)",
              sp.layout = list(list("sp.text", coordinates(regije),as.character(regije$NAME_1), cex = 0.5))))
@@ -114,7 +122,12 @@ zemljevid.prebivalstvo <- prebivalstvo[as.character(slo$NAME_1), ]
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
 prebivalstvo <- prebivalstvo[as.character(slo$NAME_1), ]
 
-
+koordinate <- coordinates(regije)
+rownames(koordinate) <- as.character(regije$NAME_1) # za lažje indeksiranje
+# premaknemo po osi x
+koordinate["Jugovzhodna Slovenija", 1] <- koordinate["Jugovzhodna Slovenija", 1] - 0.05
+# premaknemo po osi y
+koordinate["Obalno-kraška", 2] <- koordinate["Obalno-kraška", 2] - 0.1
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid slovenije...\n")
@@ -127,32 +140,34 @@ max.povprecje <- max(prebivalstvo$povprecje, na.rm=TRUE)
 norm.povprecje <- (prebivalstvo$povprecje-min.povprecje)/(max.povprecje-min.povprecje)
 
 n = 100
-barve =rgb(1, 1, (n:1)/n)[unlist(1+(n-1)*norm.prebivalstvo)]
+barve =rgb(1, 1, (n:1)/n)[unlist(1+(n-1)*norm.povprecje)]
 plot(slo, col = barve,bg="lightblue")
-text(coordinates(slo),labels=as.character(slo$NAME_1),cex=0.5)
+text(koordinate,labels=as.character(regije$NAME_1),cex=0.5)
 title("Povprečno število prebivalcev po regijah")
+LJUBLJANA <- slo$VARNAME_1 == "Ljubljana"
+points(coordinates(slo), pch = ifelse(LJUBLJANA, 18, 0), cex = ifelse(LJUBLJANA, 0.5 ,0), col = ifelse(LJUBLJANA, "red", "white"))
 
 dev.off()
 
 pdf("slike/prebivalstvo2.pdf")
 slo$prebivalstvo2008 <- zemljevid.prebivalstvo[,3]
-print(spplot(slo, "prebivalstvo2008", col.regions  = topo.colors(50),
-             main = "Število prebivalcev po regijah (leto 2008)",
-             sp.layout = list(list("sp.text", coordinates(slo),as.character(slo$NAME_1), cex = 0.5))))
+print(spplot(regije, "stanovanja2008", col.regions  = topo.colors(50),
+             main = "Število stanovanj po regijah (leto 2008)",
+             sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
 dev.off()
 
 pdf("slike/prebivalstvo3.pdf")
 slo$prebivalstvo2011 <- zemljevid.prebivalstvo[,6]
 print(spplot(slo, "prebivalstvo2011", col.regions  = topo.colors(50),
              main = "Število prebivalcev po regijah (leto 2011)",
-             sp.layout = list(list("sp.text", coordinates(slo),as.character(slo$NAME_1), cex = 0.5))))
+             sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
 dev.off()
 
 pdf("slike/prebivalstvo4.pdf")
 slo$prebivalstvo2013 <- zemljevid.prebivalstvo[,8]
 print(spplot(slo, "prebivalstvo2013", col.regions  = topo.colors(50),
              main = "Število prebivalcev po regijah (leto 2013)",
-             sp.layout = list(list("sp.text", coordinates(slo),as.character(slo$NAME_1), cex = 0.5))))
+             sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
 dev.off()
 
 
