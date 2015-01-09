@@ -2,8 +2,8 @@ pdf("slike/grafi.pdf",paper="a4")
 
 #leta
 barplot(as.matrix(leta), names.arg = 2008:2013,
-        beside = TRUE, legend = rownames(13),
-        args.legend = c(cex = 0.7), col = rainbow)
+        beside = TRUE, legend = rownames(leta),
+        args.legend = c(cex = 0.7), col = rainbow(13))
 
 #investitorji
 oznake <- rownames(invest)
