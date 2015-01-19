@@ -1,0 +1,44 @@
+"Ocena dokonèanih stanovanj po: LETO, MERITVE, STATISTIÈNA REGIJA,"
+"DOKONÈANA STANOVANJA , INVESTITOR"
+
+" ";" ";" ";"Dokonèana stanovanja - SKUPAJ";" ";" "
+" ";" ";" ";"Investitor - SKUPAJ";"Pravna oseba";"Fizièna oseba"
+"2013"
+" ";"Število"
+" ";" ";"SLOVENIJA";3484;828;2656
+" ";" ";"Pomurska";227;3;224
+" ";" ";"Podravska";547;94;453
+" ";" ";"Koroška";103;8;95
+" ";" ";"Savinjska";687;300;387
+" ";" ";"Zasavska";39;19;20
+" ";" ";"Spodnjeposavska";118;2;116
+" ";" ";"Jugovzhodna Slovenija";227;12;215
+" ";" ";"Osrednjeslovenska";606;94;512
+" ";" ";"Gorenjska";460;227;233
+" ";" ";"Notranjsko-kraška";108;5;103
+" ";" ";"Goriška";188;26;162
+" ";" ";"Obalno-kraška";174;38;136
+
+"Vir: Statistièni urad Republike Slovenije "
+" "
+" "
+"Povezane vsebine: "
+"- (seznam HREF=http://www.stat.si/doc/metod_pojasnila/19-069-MP.pdf "
+"target=_blank) Metodološka pojasnila "
+"- (seznam "
+"HREF=http://www.stat.si/koledar.asp?pod=19&kon=069&DatumOd=1.1.2005&D-"
+"atumDo=Date() target=_blank) Koledar objav "
+"- (seznam HREF=http://www.stat.si/metodologija_vpr.asp?pod=19&kon=069 "
+"target=_blank) Vprašalniki statistiènega raziskovanja "
+" "
+
+"Podatki so teritorialno razvršèeni po Klasifikaciji statistiènih "
+"teritorialnih enot v Evropski uniji (The Classification  of "
+"Territorial Units for Statistics) – NUTS ((seznam "
+"HREF=../database/Meta/Klas/NUTS.htm TARGET=_blank) opis in "
+"pojasnila), raven NUTS 3.Opombe o spremembah posameznih regij so "
+"zapisane k vsaki spremenjeni regiji in so ob izpisu tabele na zaslon "
+"dostopne s klikom na ikono za opombe (zvezdica). V opombah je na "
+"zaèetku naveden datum, s katerim je opisana teritorialna sprememba "
+"upoštevana pri teritorialnem razvršèanju enot za statistiène namene."
+
