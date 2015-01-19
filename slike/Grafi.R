@@ -9,6 +9,6 @@ barplot(as.matrix(leta), names.arg = 2008:2013,
 oznake <- rownames(invest)
 oznake[8] <- "Jugovzhodna\nSlovenija"
 barplot(apply(invest[-1,], 1, c), beside = TRUE, names.arg = oznake[-1], las = 2,
-        legend = c("Novogradnja", "Povečava", "Sprememba namembnosti"), cex.names = 0.6, args.legend = c(cex = 0.6))
+        legend = c("Pravna oseba", "Fizična oseba", "Povprečje"), cex.names = 0.6, args.legend = c(cex = 0.6))
 
 dev.off()
