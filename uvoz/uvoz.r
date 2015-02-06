@@ -45,7 +45,7 @@ nacin <- uvozi.nacin()
 uvoziPrebivalstvo <- function(){
   return(read.table("podatki/prebivalstvo_po_regijah.csv", sep = ";", as.is = TRUE,
                     row.names = 1,
-                    col.names = c(rep("", 1), "2008H1", "2008H2", "2009H1", "2009H2", "2010H1", "2010H2", "2011H1", "2011H2", "2012H1", "2012H2", "2013H1", "2013H2", "2014H1", "2014H2"),
+                    col.names = c(rep("", 1), "2008", "2009", "2010", "2011", "2012", "2013", "2014"),
                     skip = 3, header = FALSE,
                     fileEncoding = "UTF-8"))
 }
