@@ -3,7 +3,7 @@ pdf("slike/grafi.pdf",paper="a4")
 #leta
 barplot(as.matrix(leta), names.arg = 2008:2013,
         beside = TRUE, legend = rownames(leta),
-        args.legend = c(cex = 0.7), col = rainbow(13))
+        args.legend = c(cex = 0.7), col = rainbow(12))
 
 #investitorji
 oznake <- rownames(invest)
@@ -13,7 +13,7 @@ barplot(apply(invest[-1,], 1, c), beside = TRUE, names.arg = oznake[-1], las = 2
 
 #prebivalstvo
 barplot(as.matrix(prebivalstvo), names.arg = 2008:2013,
-        beside = TRUE, legend = rownames(leta),
-        args.legend = c(cex = 0.7), col = rainbow(13))
+        beside = TRUE, legend = rownames(prebivalstvo),
+        args.legend = c(cex = 0.7), col = rainbow(12))
 
 dev.off()

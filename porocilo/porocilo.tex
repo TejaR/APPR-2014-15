@@ -15,24 +15,27 @@ Analiza podatkov s programom R}
 \maketitle
 
 \section{Izbira teme}
+V projektu sem analizirala podatke o dokončanih stanovanjih v sloveniji ter prebivalstvo v sloveniji. Vse podatke sem primerjala med regijami v Sloveniji v letih od 2008 do 2013. Podatke sem našla na spletni strani Statističnega urada republike Slovenije. Poiskala sem primerjavo o dokončanih stanovanjih po investitorjih in glede na nastanek, ter skupno število dokončanih gradenj po letih. Prav tako sem pridobila podatke o prebivalstvu po letih. Podatke sem pridobila tako v CSV kot v HTML obliki
 
-V projektu, bom analizirala podatke o dokončanih stanovanjih. Primerjala bom dokončana stanovanja glede na nastanek, torej stanovanja pridobljena z novogradnjo, povečavo in spremembo namembnosti. Nato bom primerjala stanovanja po investitorjih, ki so investirali v gradnjo. Radelila jih bom na pravne in fizične osebe. Vse te podatke pa bom primerjala po regijah v Sloveniji.
-
-Podatke za moj projekt sam dobila na spletni strani Statističnega urada Republike Slovenije. 
+Vse podatke o gradnji stanovanj sem dobila iz spletne strani Statističnega urada republike Slovenij:
 \url{http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=1906902S&ti=&path=../Database/Ekonomsko/19_gradbenistvo/05_19069_graditev_stan/&lang=2}
 
-Moj cilj projekta je, da analiziram katere regije imajo največ dokončanih stanovanj, kateri investitorji so največ investirali v izgradnjo stanovanje in primerjati kako so stanovanja nastala.
+Podatke o prebivalstvu v Sloveniji pa prav tako iz spletne strani Statističnega urada republike Slovenije:
+\url{http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05C2001S&ti=&path=../Database/Dem_soc/05_prebivalstvo/10_stevilo_preb/10_05C20_prebivalstvo_stat_regije/&lang=2}
+
+Moji cilj projekt je analizirati kako je rast prebivalstva povezana gradno stanovanj ter primerajti kako se ti podatki razlikujejo po regijah.
 
 \newpage
 \section{Obdelava, uvoz in čiščenje podatkov}
-V drugi fazi projekta sem uvozila dve razpredelnici v csv obliki in eno v html obliki. Vsi podatki za tabele so iz spletne strani SURSa.
+V drugi fazi projekta sem uvozila podatke, ki sem jih našla v prvi fazi, kot razpredelnice. Uvozila sem 4 razpredelnice, vendar sem v nadaljno analizo vključila le dve razpredelnici in iz njiju narisala grafa.
 
-Uvoz razpredelnic v csv obliki je bil nekoliko lažji prav tako izdelava grafov za prvi dve tabeli. Tretja tabela in graf pa st bila nekoliko težja, vendar mi je z nekoliko truda uspelo tudi to.
+Prvi graf prikazuje število dokončanih stanovanj. Uporabila sem podatke med leti 2008 in 2013 in jih prikazala za vse regije v Sloveniji.
+\includepdf[pages={1}]{../slike/grafi.pdf}
 
-Tu so vsi moji grafi:
+Drug graf pa prikazuje prebivalstvo po regijah v Sloveniji. Za lažjo primerjavo sem uporabila podatke med leti 2008 in 2013.
+\includepdf[pages={3}]{../slike/grafi.pdf}
 
-\includepdf[pages={1-2}]{../slike/grafi.pdf}
-
+\newpages
 \section{Analiza in vizualizacija podatkov}
 
 V tej fazi sem se odločila, da bom v svoj projekt vključila zemljevide, ki prikazujejo število zgrajenih stanovanj po regijah.

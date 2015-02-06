@@ -55,6 +55,7 @@ regije <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2/shp/SVN_adm.zip"
                           "regije", "SVN_adm1.shp", mapa = "zemljevid",
                           encoding = "Windows-1250")
 
+#stanovanja
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
 zemljevid.leta <- leta[as.character(regije$NAME_1), ]
 
@@ -118,17 +119,12 @@ print(spplot(regije, "stanovanja2013", col.regions  = topo.colors(50),
              sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 dev.off()
 
-# Uvozimo zemljevid.
-cat("Uvažam zemljevid...\n")
-slo <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2/shp/SVN_adm.zip",
-                          "slovenija", "SVN_adm1.shp", mapa = "zemljevid",
-                          encoding = "Windows-1250")
-
+#prebivalstvo
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
-zemljevid.prebivalstvo <- prebivalstvo[as.character(slo$NAME_1), ]
+zemljevid.prebivalstvo <- prebivalstvo[as.character(regije$NAME_1), ]
 
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
-prebivalstvo <- prebivalstvo[as.character(slo$NAME_1), ]
+prebivalstvo <- prebivalstvo[as.character(regije$NAME_1), ]
 
 koordinate <- coordinates(regije)
 rownames(koordinate) <- as.character(regije$NAME_1) # za lažje indeksiranje
@@ -160,28 +156,28 @@ legend("bottomright",
        fill = barve[stopnje], bg = "white")
 text(koordinate,rownames(koordinate),cex=0.5)
 title("Povprečno število prebivalcev po regijah")
-LJUBLJANA <- slo$VARNAME_1 == "Ljubljana"
+LJUBLJANA <- regije$VARNAME_1 == "Ljubljana"
 points(14.51, 46.06, pch = 18, cex = 0.5, col = "red")
 
 dev.off()
 
 pdf("slike/prebivalstvo2.pdf")
-slo$prebivalstvo2008 <- zemljevid.prebivalstvo[,3]
+regije$prebivalstvo2008 <- zemljevid.prebivalstvo[,"2008"]
 print(spplot(regije, "stanovanja2008", col.regions  = topo.colors(50),
              main = "Število stanovanj po regijah (leto 2008)",
              sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
 dev.off()
 
 pdf("slike/prebivalstvo3.pdf")
-slo$prebivalstvo2011 <- zemljevid.prebivalstvo[,6]
-print(spplot(slo, "prebivalstvo2011", col.regions  = topo.colors(50),
+regije$prebivalstvo2011 <- zemljevid.prebivalstvo[,"X2011"]
+print(spplot(regije, "prebivalstvo2011", col.regions  = topo.colors(50),
              main = "Število prebivalcev po regijah (leto 2011)",
              sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
 dev.off()
 
 pdf("slike/prebivalstvo4.pdf")
-slo$prebivalstvo2013 <- zemljevid.prebivalstvo[,8]
-print(spplot(slo, "prebivalstvo2013", col.regions  = topo.colors(50),
+regije$prebivalstvo2013 <- zemljevid.prebivalstvo[,"X2013"]
+print(spplot(regije, "prebivalstvo2013", col.regions  = topo.colors(50),
              main = "Število prebivalcev po regijah (leto 2013)",
              sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
 dev.off()
