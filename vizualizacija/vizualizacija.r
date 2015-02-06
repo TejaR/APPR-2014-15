@@ -146,7 +146,7 @@ norm.povprecje <- (prebivalstvo$povprecje-min.povprecje)/(max.povprecje-min.povp
 
 n <- 100
 barve <- rgb(1, 1, (n:1)/n)
-plot(slo, col = barve[unlist(1+(n-1)*norm.povprecje)],bg="lightblue")
+plot(regije, col = barve[unlist(1+(n-1)*norm.povprecje)],bg="lightblue")
 
 k <- 10 # število barv v legendi
 stopnje <- (1:k)*n/k
@@ -162,7 +162,7 @@ points(14.51, 46.06, pch = 18, cex = 0.5, col = "red")
 dev.off()
 
 pdf("slike/prebivalstvo2.pdf")
-regije$prebivalstvo2008 <- zemljevid.prebivalstvo[,"2008"]
+regije$prebivalstvo2008 <- zemljevid.prebivalstvo[,"X2008"]
 print(spplot(regije, "stanovanja2008", col.regions  = topo.colors(50),
              main = "Število stanovanj po regijah (leto 2008)",
              sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
