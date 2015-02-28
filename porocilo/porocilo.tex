@@ -10,7 +10,7 @@
 
 \begin{document}
 \title{Poročilo pri predmetu \\
-Analiza podatkov s programom R
+Analiza podatkov s programom R\\
 \vspace{15mm}
 \textbf{\emph{Gradnja stanovanj}}}
 \author{Teja Rupnik}
@@ -18,7 +18,7 @@ Analiza podatkov s programom R
 
 \newpage
 \section{Izbira teme}
-V projektu sem analizirala podatke o dokončanih stanovanjih v sloveniji ter prebivalstvo v sloveniji. Vse podatke sem primerjala med regijami v Sloveniji v letih od 2008 do 2013. Podatke sem našla na spletni strani Statističnega urada republike Slovenije. Poiskala sem primerjavo o dokončanih stanovanjih po investitorjih in glede na nastanek, ter skupno število dokončanih gradenj po letih. Prav tako sem pridobila podatke o prebivalstvu po letih. Podatke sem pridobila tako v \verb|csv| kot v  \verb|html| obliki
+V projektu sem analizirala podatke o dokončanih stanovanjih v sloveniji ter o prebivalstvu v sloveniji. Vse podatke sem primerjala med regijami v Sloveniji v letih od 2008 do 2013. Podatke sem našla na spletni strani Statističnega urada republike Slovenije. Poiskala sem primerjavo o dokončanih stanovanjih po investitorjih in glede na nastanek, ter skupno število dokončanih gradenj po letih. Prav tako sem pridobila podatke o prebivalstvu po letih. Podatke sem pridobila tako v \verb|csv| kot v  \verb|html| obliki
 
 Vse podatke o gradnji stanovanj sem dobila iz spletne strani Statističnega urada republike Slovenij:
 \url{http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=1906902S&ti=&path=../Database/Ekonomsko/19_gradbenistvo/05_19069_graditev_stan/&lang=2}
@@ -36,6 +36,8 @@ Moji cilj projekt je analizirati:
 \section{Obdelava, uvoz in čiščenje podatkov}
 V drugi fazi projekta sem uvozila podatke, ki sem jih našla v prvi fazi, kot razpredelnice. Uvozila sem 4 razpredelnice.
 
+Uvožene podatke sem shtanila v mapo \verb|podatki| ter jih kot tabele uvozila v mapi \verb|uvozi|, v \verb|uvozi.r|
+
 \begin{enumerate}
 \item{tabela: Prikazuje Število izgrajenih stanovanje po regijah v Slovenije glede na investitorja (pravna oseba, fizična oseba) za leto 2013 ter povprečje za leto 2013. tevilo stanovanj [številske spremenljivke] je podana v stolpcih, v vrsticah pa imamo regije v Sloveniji [imenske spremenljivke].}
 \item{tabela: Prikazuje tevilo izgrajenih stanovanj po regijah v Sloveniji, med leti 2008 in 1013. Leta [številske spremenljivke] so podana v stolpcu, v vrsticah pa imamo imena rgij v Sloveniji [imenske spremenljivke].}
@@ -43,10 +45,10 @@ V drugi fazi projekta sem uvozila podatke, ki sem jih našla v prvi fazi, kot ra
 \item{tabela: Prikazuje tisoče prebivalcev po regijah v Sloveniji med leti 2008 in 2013 ter povprečje vseh let. Leta [številske spremenljivke] so podana v stolpcih, v vrsticah pa so podane regije v Sloveniji [imenske spremenljivke].}
 \end{enumerate}
 
-Vendar sem v nadaljno analizo vključila le dve razpredelnici in iz njiju narisala grafa.
+Vendar sem v nadaljno analizo vključila le dve razpredelnici in iz njiju narisala grafa, ki se nahajata v mapi \verb|slike|, \verb|Grafi.R|.
 
 \newpage
-\textbf{1.GRAF: \emph{Izgrajena stanovanja, med leti 2008 in 2013}}: Za prvo tabelo, ki govori o izgrajenih stanovanjih sem se odločila, da bom uporabila stolpični graf (barplot), saj sem želela, da bi iz grafa videli primerjavo tako med regijami kot tudi med posameznimi leti.\\
+\textbf{1.GRAF: \emph{Izgrajena stanovanja med leti 2008 in 2013}}: Za prvo tabelo, ki govori o izgrajenih stanovanjih sem se odločila, da bom uporabila stolpični graf (barplot), saj sem želela, da bi iz grafa videli primerjavo tako med regijami kot tudi med posameznimi leti.\\
 \textbf{Interpretacija}: Iz grafa lahko vidimo, da se je v preteklih letih največ stanovanj pridobilo v osrednji Sloveniji, ter da je pridobitev novi stanovanj povsod v Sloveniji upadala.
 
 \makebox[\textwidth][c]{
@@ -54,7 +56,7 @@ Vendar sem v nadaljno analizo vključila le dve razpredelnici in iz njiju narisa
 }
 
 \newpage
-\textbf{2.GRAF: \emph{Prebivalstvo, med leti 2008 in 2013}}: Tudi za drugo tabelo, ki prikazuje prebivalstvo po regijah med leti 2008 in 2012 se uporabila stolpični graf (barplot), saj sem prav tako želela, da bi iz grafa videli primerjavo tako med regijami kot tudi med posameznimi leti.\\
+\textbf{2.GRAF: \emph{Prebivalstvo med leti 2008 in 2013}}: Tudi za drugo tabelo, ki prikazuje prebivalstvo po regijah med leti 2008 in 2012 se uporabila stolpični graf (barplot), saj sem prav tako želela, da bi iz grafa videli primerjavo tako med regijami kot tudi med posameznimi leti.\\
 \textbf{Interpretacija}: Iz grafa lahko vidimo, da se je v največ prebivalstva prav v osrednji Sloveniji, ter da prebivalstvo povsot rahlo upadalo vendar nekoliko počasneje kot pri pridobivanju novi stanovanj.
 
 \makebox[\textwidth][c]{
