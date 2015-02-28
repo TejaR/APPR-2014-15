@@ -58,6 +58,7 @@ prebivalstvo <- uvoziPrebivalstvo()
 
 
 
+
 # Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi
 # potrebovali v 3. fazi, bi bilo smiselno funkcije dati v svojo
 # datoteko, tukaj pa bi klicali tiste, ki jih potrebujemo v
