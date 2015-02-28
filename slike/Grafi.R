@@ -1,3 +1,4 @@
+cat("Rišem grafe...\n")
 pdf("slike/grafi.pdf",paper="a4")
 
 #leta
