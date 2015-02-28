@@ -119,6 +119,7 @@ print(spplot(regije, "stanovanja2013", col.regions  = topo.colors(50),
              sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 dev.off()
 
+
 #prebivalstvo
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
 zemljevid.prebivalstvo <- prebivalstvo[as.character(regije$NAME_1), ]
@@ -180,6 +181,28 @@ regije$prebivalstvo2013 <- zemljevid.prebivalstvo[,"X2013"]
 print(spplot(regije, "prebivalstvo2013", col.regions  = topo.colors(50),
              main = "Število prebivalcev po regijah (leto 2013)",
              sp.layout = list(list("sp.text", koordinate,as.character(regije$NAME_1), cex = 0.5))))
+dev.off()
+
+#stanovanj na prebivalca
+pdf("slike/stanovanja_na_prebivalca1.pdf")
+regije$snp2008 <- zemljevid.leta[,3]/zemljevid.prebivalstvo[,3]
+print(spplot(regije, "snp2008", col.regions  = topo.colors(50),
+             main = "Število stanovanj na prebivalca po regijah (leto 2008)",
+             sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
+dev.off()
+
+pdf("slike/stanovanja_na_prebivalca2.pdf")
+regije$snp2011 <- zemljevid.leta[,6]/zemljevid.prebivalstvo[,6]
+print(spplot(regije, "snp2011", col.regions  = topo.colors(50),
+             main = "Število stanovanj na prebivalca po regijah (leto 2011)",
+             sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
+dev.off()
+
+pdf("slike/stanovanja_na_prebivalca3.pdf")
+regije$snp2013 <- zemljevid.leta[,"X2013"]/zemljevid.prebivalstvo[,"X2013"]
+print(spplot(regije, "snp2013", col.regions  = topo.colors(50),
+             main = "Število stanovanj na prebivalca po regijah (leto 2013)",
+             sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 dev.off()
 
 
