@@ -99,14 +99,14 @@ points(14.51, 46.06, pch = 18, cex = 0.5, col = "red")
 dev.off()
 
 pdf("slike/regije2.pdf")
-regije$stanovanja2008 <- zemljevid.leta[,3]
+regije$stanovanja2008 <- zemljevid.leta[,1]
 print(spplot(regije, "stanovanja2008", col.regions  = topo.colors(50),
              main = "Število stanovanj po regijah (leto 2008)",
              sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 dev.off()
 
 pdf("slike/regije3.pdf")
-regije$stanovanja2011 <- zemljevid.leta[,6]
+regije$stanovanja2011 <- zemljevid.leta[,3]
 print(spplot(regije, "stanovanja2011", col.regions  = topo.colors(50),
              main = "Število stanovanj po regijah (leto 2011)",
              sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
@@ -186,14 +186,14 @@ dev.off()
 cat("Rišem zemljevid stanovanj na prebivalca...\n")
 #stanovanj na prebivalca
 pdf("slike/slike-analiza/stanovanja_na_prebivalca1.pdf")
-regije$snp2008 <- zemljevid.leta[,3]/zemljevid.prebivalstvo[,3]
+regije$snp2008 <- zemljevid.leta[,1]/zemljevid.prebivalstvo[,1]
 print(spplot(regije, "snp2008", col.regions  = topo.colors(50),
              main = "Število stanovanj na prebivalca po regijah (leto 2008)",
              sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 dev.off()
 
 pdf("slike/slike-analiza/stanovanja_na_prebivalca2.pdf")
-regije$snp2011 <- zemljevid.leta[,6]/zemljevid.prebivalstvo[,6]
+regije$snp2011 <- zemljevid.leta[,3]/zemljevid.prebivalstvo[,3]
 print(spplot(regije, "snp2011", col.regions  = topo.colors(50),
              main = "Število stanovanj na prebivalca po regijah (leto 2011)",
              sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
@@ -206,6 +206,21 @@ print(spplot(regije, "snp2013", col.regions  = topo.colors(50),
              sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 dev.off()
 
+pdf("slike/slike-analiza/stanovanja_na_prebivalca.pdf")
 
+regije$snp2008 <- zemljevid.leta[,1]/zemljevid.prebivalstvo[,1]
+print(spplot(regije, "snp2008", col.regions  = topo.colors(50),
+             main = "Število stanovanj na prebivalca po regijah (leto 2008)",
+             sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 
+regije$snp2011 <- zemljevid.leta[,3]/zemljevid.prebivalstvo[,3]
+print(spplot(regije, "snp2011", col.regions  = topo.colors(50),
+             main = "Število stanovanj na prebivalca po regijah (leto 2011)",
+             sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
 
+regije$snp2013 <- zemljevid.leta[,"X2013"]/zemljevid.prebivalstvo[,"X2013"]
+print(spplot(regije, "snp2013", col.regions  = topo.colors(50),
+             main = "Število stanovanj na prebivalca po regijah (leto 2013)",
+             sp.layout = list(list("sp.text", koordinate,rownames(koordinate), cex = 0.5))))
+
+dev.off()
