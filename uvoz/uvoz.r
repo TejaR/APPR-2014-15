@@ -17,7 +17,7 @@ uvoziPoLetih <- function(){
   return(read.table("podatki/PoLetih.csv", sep = ";", as.is = TRUE,
                     row.names = 3,
                     col.names = c(rep("", 3), 2008:2013),
-                    skip = 5, header = FALSE,
+                    skip = 4, header = FALSE,
                     fileEncoding = "UTF-8")[c(-1, -2)])
 }
 
@@ -46,7 +46,7 @@ uvoziPrebivalstvo <- function(){
   return(read.table("podatki/prebivalstvo_po_regijah.csv", sep = ";", as.is = TRUE,
                     row.names = 1,
                     col.names = c("", 2008:2013),
-                    skip = 4, header = FALSE,
+                    skip = 3, header = FALSE,
                     fileEncoding = "UTF-8"))
 }
 
